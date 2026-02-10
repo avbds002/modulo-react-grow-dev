@@ -1,3 +1,5 @@
+import { Wrapper, Container, Title, Logo } from "./styles";
+import blog_png from "../../assets/blog-png7.png";
 export function Header() {
   const isUserLoggedIn = false;
 
@@ -11,8 +13,15 @@ export function Header() {
 
   return (
     <>
-      <h1>Meu Blog</h1>
-      {message}
+      <Wrapper>
+        <Container>
+          <div>
+            <Title as={"h2"}>Meu Blog</Title>
+            {message}
+          </div>
+          <Logo src={blog_png} />
+        </Container>
+      </Wrapper>
     </>
   );
 }
