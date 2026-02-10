@@ -1,4 +1,5 @@
 import type { ReactNode } from "react";
+import { Link } from "react-router-dom";
 
 interface PostProps {
   id: number;
@@ -13,7 +14,7 @@ interface PostProps {
 }
 
 export function Post({
-  //id,
+  id,
   image,
   category,
   title,
@@ -34,7 +35,9 @@ export function Post({
       <article>
         <img src={image} alt={title} />
         <p>{category}</p>
-        <h2>{title}</h2>
+        <h2>
+          <Link to={`/post/${id}`}>{title}</Link>
+        </h2>
 
         <div>
           <img src={avatar} alt={title} />
