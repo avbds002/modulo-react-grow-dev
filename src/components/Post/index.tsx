@@ -1,5 +1,6 @@
 import { Link } from "react-router-dom";
 import type { IPost } from "../../types";
+import { Avatar } from "./styles";
 
 export function Post({
   id,
@@ -30,7 +31,7 @@ export function Post({
         </h2>
 
         <div>
-          <img src={avatar} alt={title} />
+          <Avatar src={avatar} alt={title} />
           <div>
             <span>
               <p>{author}</p>
