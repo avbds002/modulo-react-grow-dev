@@ -1,3 +1,4 @@
+import { useTheme } from "styled-components";
 import type { IPost } from "../../types";
 import { Article, Avatar, Button, RoundedButton, StyledLink } from "./styles";
 
@@ -12,6 +13,7 @@ export function Post({
   createdAt,
   children,
 }: IPost) {
+  const theme = useTheme();
   let contadorCurtidas = 0;
   function handleLike() {
     contadorCurtidas += 1;
@@ -30,7 +32,7 @@ export function Post({
         <div>
           <Avatar src={avatar} alt={title} />
           <div>
-            <span>
+            <span style={{ color: theme.colors.title }}>
               <p>{author}</p>
             </span>
             <span>
@@ -43,7 +45,7 @@ export function Post({
         <Button primary={false} onClick={() => handleLike()}>
           Curtir
         </Button>
-        <RoundedButton primary={true} as="a">
+        <RoundedButton $primary={true} as="a">
           Compartilhar
         </RoundedButton>
       </Article>
