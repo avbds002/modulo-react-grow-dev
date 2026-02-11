@@ -1,6 +1,5 @@
-import { Link } from "react-router-dom";
 import type { IPost } from "../../types";
-import { Avatar, Button, RoundedButton } from "./styles";
+import { Avatar, Button, RoundedButton, StyledLink } from "./styles";
 
 export function Post({
   id,
@@ -25,7 +24,7 @@ export function Post({
         <img src={image} alt={title} />
         <p>{category}</p>
         <h2>
-          <Link to={`/post/${id}`}>{title}</Link>
+          <StyledLink to={`/post/${id}`}>{title}</StyledLink>
         </h2>
 
         <div>

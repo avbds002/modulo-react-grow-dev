@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import styled, { css } from "styled-components";
 
 interface ButtonProps {
@@ -26,4 +27,9 @@ export const RoundedButton = styled(Button)`
   border-radius: 20px;
   padding: 0.5em 1.5em;
   font-weight: bold;
+`;
+
+export const StyledLink = styled(Link)`
+  color: #000;
+  text-decoration: none;
 `;
