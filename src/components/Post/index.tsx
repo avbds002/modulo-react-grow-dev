@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
 import type { IPost } from "../../types";
-import { Avatar, Button } from "./styles";
+import { Avatar, Button, RoundedButton } from "./styles";
 
 export function Post({
   id,
@@ -41,9 +41,12 @@ export function Post({
         </div>
         <p>{description}</p>
         {children}
-        <Button primary={true} onClick={() => handleLike()}>
+        <Button primary={false} onClick={() => handleLike()}>
           Curtir
         </Button>
+        <RoundedButton primary={true} as="a">
+          Compartilhar
+        </RoundedButton>
       </article>
     </>
   );

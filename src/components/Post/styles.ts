@@ -21,3 +21,9 @@ export const Button = styled.button<ButtonProps>`
   border: 2px solid #3295b4;
   cursor: pointer;
 `;
+
+export const RoundedButton = styled(Button)`
+  border-radius: 20px;
+  padding: 0.5em 1.5em;
+  font-weight: bold;
+`;
