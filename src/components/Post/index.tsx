@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
 import type { IPost } from "../../types";
-import { Avatar } from "./styles";
+import { Avatar, Button } from "./styles";
 
 export function Post({
   id,
@@ -13,8 +13,6 @@ export function Post({
   createdAt,
   children,
 }: IPost) {
-  const hasExtraContent = true;
-
   let contadorCurtidas = 0;
   function handleLike() {
     contadorCurtidas += 1;
@@ -43,13 +41,9 @@ export function Post({
         </div>
         <p>{description}</p>
         {children}
-        {hasExtraContent ? (
-          <button>Leia mais</button>
-        ) : (
-          <p>Nenhum conteúdo disponível</p>
-        )}
-
-        <button onClick={() => handleLike()}>Curtir</button>
+        <Button primary={true} onClick={() => handleLike()}>
+          Curtir
+        </Button>
       </article>
     </>
   );
