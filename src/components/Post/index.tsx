@@ -1,17 +1,5 @@
-import type { ReactNode } from "react";
 import { Link } from "react-router-dom";
-
-interface PostProps {
-  id: number;
-  image: string;
-  category: string;
-  title: string;
-  description: string;
-  author: string;
-  avatar: string;
-  createdAt: string;
-  children?: ReactNode;
-}
+import type { IPost } from "../../types";
 
 export function Post({
   id,
@@ -23,11 +11,13 @@ export function Post({
   avatar,
   createdAt,
   children,
-}: PostProps) {
+}: IPost) {
   const hasExtraContent = true;
 
-  function handleLike(title: string) {
-    alert(`Você curtiu o post ${title}`);
+  let contadorCurtidas = 0;
+  function handleLike() {
+    contadorCurtidas += 1;
+    alert(`Você curtiu esse post ${contadorCurtidas} vezes`);
   }
 
   return (
@@ -58,7 +48,7 @@ export function Post({
           <p>Nenhum conteúdo disponível</p>
         )}
 
-        <button onClick={() => handleLike(title)}>Curtir</button>
+        <button onClick={() => handleLike()}>Curtir</button>
       </article>
     </>
   );

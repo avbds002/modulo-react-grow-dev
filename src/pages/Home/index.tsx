@@ -1,8 +1,8 @@
 import type { ChangeEvent, FormEvent } from "react";
 import { Footer } from "../../components/Footer";
 import { Header } from "../../components/Header";
-import { Post } from "../../components/Post";
 import { posts } from "../../posts";
+import { PostsList } from "../../components/PostsList";
 
 export function Home() {
   let filterText = "";
@@ -35,19 +35,7 @@ export function Home() {
       </form>
 
       <main>
-        {posts.map((post) => (
-          <Post
-            key={post.id}
-            id={post.id}
-            title={post.title}
-            image={post.image}
-            category={post.category}
-            avatar={post.avatar}
-            createdAt={post.createdAt}
-            description={post.description}
-            author={post.author}
-          ></Post>
-        ))}
+        <PostsList posts={posts} />
       </main>
 
       <Footer />
