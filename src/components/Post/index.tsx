@@ -1,5 +1,5 @@
 import type { IPost } from "../../types";
-import { Avatar, Button, RoundedButton, StyledLink } from "./styles";
+import { Article, Avatar, Button, RoundedButton, StyledLink } from "./styles";
 
 export function Post({
   id,
@@ -20,9 +20,9 @@ export function Post({
 
   return (
     <>
-      <article>
+      <Article>
         <img src={image} alt={title} />
-        <p>{category}</p>
+        <p className="category">{category}</p>
         <h2>
           <StyledLink to={`/post/${id}`}>{title}</StyledLink>
         </h2>
@@ -46,7 +46,7 @@ export function Post({
         <RoundedButton primary={true} as="a">
           Compartilhar
         </RoundedButton>
-      </article>
+      </Article>
     </>
   );
 }

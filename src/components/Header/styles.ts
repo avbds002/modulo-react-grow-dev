@@ -1,4 +1,14 @@
-import styled from "styled-components";
+import styled, { keyframes } from "styled-components";
+
+const bounce = keyframes`
+  0%, 100%{
+    transform: translateY(0);
+  }
+
+  50% {
+    transform: translateY(-10px);
+  }
+`;
 
 export const Wrapper = styled.header`
   background-color: #f7f8fe;
@@ -22,4 +32,6 @@ export const Title = styled.h1`
 
 export const Logo = styled.img`
   width: 100px;
+
+  animation: ${bounce} 1s ease-in-out;
 `;
