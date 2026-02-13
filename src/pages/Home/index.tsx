@@ -3,6 +3,7 @@ import { Footer } from "../../components/Footer";
 import { Header } from "../../components/Header";
 import { posts } from "../../posts";
 import { PostsList } from "../../components/PostsList";
+import { Container, FormWrapper } from "./styles";
 
 export function Home() {
   let filterText = "";
@@ -25,14 +26,16 @@ export function Home() {
     <>
       <Header />
 
-      <form onSubmit={handleFormSubmit}>
-        <input
-          type="text"
-          placeholder="Filtrar posts por titulo"
-          onChange={handleFilterChange}
-        />
-        <button>Filtrar</button>
-      </form>
+      <FormWrapper onSubmit={handleFormSubmit}>
+        <Container>
+          <input
+            type="text"
+            placeholder="Filtrar posts por titulo"
+            onChange={handleFilterChange}
+          />
+          <button>Filtrar</button>
+        </Container>
+      </FormWrapper>
 
       <main>
         <PostsList posts={posts} />

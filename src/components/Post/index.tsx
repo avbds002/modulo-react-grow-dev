@@ -29,7 +29,7 @@ export function Post({
           <StyledLink to={`/post/${id}`}>{title}</StyledLink>
         </h2>
 
-        <div>
+        <div className="post-info">
           <Avatar src={avatar} alt={title} />
           <div>
             <span style={{ color: theme.colors.title }}>
@@ -40,7 +40,7 @@ export function Post({
             </span>
           </div>
         </div>
-        <p>{description}</p>
+        <p className="description">{description}</p>
         {children}
         <Button primary={false} onClick={() => handleLike()}>
           Curtir

@@ -79,4 +79,26 @@ export const Article = styled.article`
     color: ${({ theme }) => theme.colors.primary};
     font-weight: bold;
   }
+
+  .post-info {
+    margin: 20px 0;
+    display: flex;
+    gap: 10px;
+
+    div {
+      display: flex;
+      flex-direction: column;
+    }
+
+    span {
+      font-size: 13px;
+      line-height: 20px;
+      color: ${({ theme }) => theme.colors.textColor};
+    }
+  }
+
+  .description {
+    color: ${({ theme }) => theme.colors.textColor};
+    margin-bottom: 10px;
+  }
 `;
